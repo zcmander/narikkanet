@@ -38,7 +38,7 @@ features:
    description: You can start and stop the subscription of the Narikka-service any time. We will always bill you by usage.
 
 interior_heading: Better together
-interior_paragraph: We are looking partners for our service to can develop it even better in the future. We aim to be the best digital platform for restaurants.
+interior_paragraph: We are looking partners for our service, so we can develop it together to make it to the best fit for your business. We aim to be the best digital platform for restaurants.
 
 interior_paragraph2: Hop in and let's make the future of the Narikka-service today, together!
 
