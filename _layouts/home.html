@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{page.lang}}">
 
 <head>
     <!-- Google Tag Manager -->
@@ -25,7 +25,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="img/favicon.png" type="image/png">
-    <title>NARIKKA - Nykyaikaista ravintolasi</title>
+
+    <link rel="alternate" hreflang="fi" href="/" />
+    <link rel="alternate" hreflang="en" href="/en.html" />
+
+    <title>{{ page.title }}</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="vendors/linericon/style.css">
@@ -40,7 +44,7 @@
     <link rel="stylesheet" href="css/responsive.css">
 
     <meta name=”robots” content="index, follow">
-    <meta name="description" content="Palvele ravintolasi asiakkaitasi suoraan puhemista." />
+    <meta name="description" content="{{page.description}}" />
 </head>
 
 <body data-spy="scroll" data-target="#mainNav" data-offset="70">
@@ -63,9 +67,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item active"><a class="nav-link" href="#home">KOTI</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#feature">OMINAISUUDET</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#contact">Ota yhteyttä</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="#home">{{ page.nav_home }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#feature">{{ page.nav_feature }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contact">{{ page.nav_contact }}</a></li>
+
+                            {% if page.lang == 'en' %}
+                                <li class="nav-item"><a class="nav-link" href="/">In finnish</a></li>
+                            {% else %}
+                                <li class="nav-item"><a class="nav-link" href="/en.html">In english</a></li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
@@ -80,13 +90,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="container">
                 <div class="row banner_content">
                     <div class="col-lg-9">
-                        <h2>Nykyaikaista <br />ravintolasi</h2>
-                        <p>Narikka-palvelun avulla palvelet ravintolasi asiakkaitasi ketterästi ja monipuolisesti suoraan puhelimesta. Voit sujuvoittaa eteispalvelua ottamalla käyttöön mobiilimaksut ja sähköiset narikkatunnisteet.</p>
-                        <a class="banner_btn" href="#contact">Ota yhteyttä</a>
+                        <h2>{{page.banner_area_headline}}</h2>
+                        <p>{{page.banner_area_paragraph}}</p>
+                        <a class="banner_btn" href="#contact">{{page.call_to_action_title}}</a>
                     </div>
                     <div class="col-lg-3">
                         <div class="banner_map_img">
-                            <img class="img-fluid" src="img/banner/narikka_app.png" alt="">
+                            <img class="img-fluid" src="{{page.banner_image}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -99,39 +109,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="feature_area p_120" id="feature">
         <div class="container">
             <div class="main_title">
-                <h2>Ominaisuudet</h2>
-                <p>Ottamalla sähköisen narikan käyttöösi tehostat ravintolasi kulunvalvontaa ja vältät eteispalvelun ruuhkapiikit.</p>
+                <h2>{{page.feature_heading}}</h2>
+                <p>{{page.feature_paragraph}}</p>
             </div>
             <div class="feature_inner row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="feature_item">
-                        <img src="img/icon/phone.png" alt="" width="100px">
-                        <h4>Aina mukana</h4>
-                        <p>Käyttämällä sähköistä eteispalvelu Narikkaa, voit unohtaa hukkuneet narikkalaput ja välttää asiakkaiden hukkuneiden lappujen etsinnän odottelun.</p>
+                {% for feature in page.features %}
+                    <div class="col-lg-3 col-md-6">
+                        <div class="feature_item">
+                            <img src="{{feature.image}}" alt="" width="100px">
+                            <h4>{{feature.heading}}</h4>
+                            <p>{{feature.description}}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="feature_item">
-                        <img src="img/icon/analysis.png" alt="" width="100px">
-                        <h4>Raportit</h4>
-                        <p>Ravintolalle tuotamme liiketoimintaa edistäviä raportteja sovelluksen käytöstä ja voit parantaa ravintola kokemusta entisestään.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="feature_item">
-                        <img src="img/icon/next.png" alt="" width="100px">
-                        <h4>Vältä jonotus</h4>
-                        <p>Voit nähdä sovelluksessa reaaliaikaisen ruhkautumisasteen ja jopa maksaa suoraan jonossa.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="feature_item">
-                        <!-- <img src="img/icon/f-icon-1.png" alt=""> -->
-                        <img src="img/icon/time.png" alt="" width="100px">
-                        <h4>Käytön mukaan</h4>
-                        <p>Voit aloittaa ja päättää Narikka-alustan käytön milloin vain, laskutamme ainoastaan käytön perusteella.</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -146,12 +136,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <div class="col-lg-5 offset-lg-1">
                     <div class="interior_text">
-                        <h4>Yhdessä paremmaksi</h4>
-                        <p>Etsimme palvelullemme yhteistyökumppaneita, joiden kanssa voimme kehittää palveluamme kohti parasta ratkaisua ravintoloiden sähköiseksi palvelualustaksi.</p>
-                        <p>
-                            Lähde mukaan ja ota käyttöön Narikka!
-                        </p>
-                        <a class="main_btn" href="#contact">Ota yhteyttä</a>
+                        <h4>{{page.interior_heading}}</h4>
+                        <p>{{page.interior_paragraph}}</p>
+                        <p>{{page.interior_paragraph2}}</p>
+                        <a class="main_btn" href="#contact">{{page.call_to_action_title}}</a>
                     </div>
                 </div>
             </div>
@@ -164,26 +152,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="download_app_area p_120" id="contact">
         <div class="container">
             <div class="app_inner">
-                <h2>Ota yhteyttä!</h2>
-                <form class="row contact_form" action="https://formspree.io/maypeeaw" method="POST" id="contactForm" novalidate="novalidate">
+                <h2>{{ page.contact_form_heading }}</h2>
+                <form class="row contact_form" action="{{ page.contact_form_action_url }}" method="POST" id="contactForm" novalidate="novalidate">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Nimesi">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="{{ page.contact_form_name_placeholder }}">
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" id="email" name="_replyto" placeholder="Sähköpostiosoitteesi">
+                            <input type="email" class="form-control" id="email" name="_replyto" placeholder="{{ page.contact_form_email_placeholder }}">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Aihe">
+                            <input type="text" class="form-control" id="subject" name="subject" placeholder="{{ page.contact_form_subject_placeholder }}">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <textarea class="form-control" name="message" id="message" rows="1" placeholder="Olen kiinnostunut Narikka-palvelusta..."></textarea>
+                            <textarea class="form-control" name="message" id="message" rows="1" placeholder="{{ page.contact_form_message_placeholder }}"></textarea>
                         </div>
                     </div>
                     <div class="col-md-12 text-right">
-                        <button type="submit" value="submit" class="btn banner_btn">Lähetä</button>
+                        <button type="submit" value="submit" class="btn banner_btn">{{page.contact_form_submit}}</button>
                     </div>
                 </form>
             </div>
@@ -197,8 +185,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="row">
                 <div class="col-lg-5 col-md-6 col-sm-6">
                     <div class="single-footer-widget news_widgets">
-                        <h6 class="footer_title">Yhteystiedot</h6>
-                        <p>Meidät tavoittaa sähköpostitse: <a href="mailto:info@narikka.net">info@narikka.net</a></p>
+                        <h6 class="footer_title">{{page.footer_contact_title}}</h6>
+                        <p>{{page.footer_contact_content}}</p>
                         <!-- <div id="mc_embed_signup">
                             <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
                                 <div class="input-group d-flex flex-row">
