@@ -4,7 +4,7 @@ layout: home
 lang: fi
 
 title: NARIKKA - Nykyaikaista ravintolasi
-description: Palvele ravintolasi asiakkaitasi suoraan puhemista.
+description: Palvele ravintolasi asiakkaitasi suoraan puhelimesta.
 
 og_image: https://narikka.net/img/logo2.PNG
 og_url: https://narikka.net
