@@ -27,7 +27,7 @@
     <link rel="icon" href="img/favicon.png" type="image/png">
 
     <link rel="alternate" hreflang="fi" href="/" />
-    <link rel="alternate" hreflang="en" href="/en.html" />
+    <link rel="alternate" hreflang="en" href="/en" />
 
     <title>{{ page.title }}</title>
     <!-- Bootstrap CSS -->
@@ -45,6 +45,12 @@
 
     <meta name=”robots” content="index, follow">
     <meta name="description" content="{{page.description}}" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{{page.og_image}}">
+    <meta property="og:title" content="{{page.title}}">
+    <meta property="og:description" content="{{page.description}}">
+    <meta property="og:url" content="{{page.og_url}}">
 </head>
 
 <body data-spy="scroll" data-target="#mainNav" data-offset="70">
@@ -74,7 +80,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             {% if page.lang == 'en' %}
                                 <li class="nav-item"><a class="nav-link" href="/">In finnish</a></li>
                             {% else %}
-                                <li class="nav-item"><a class="nav-link" href="/en.html">In english</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/en">In english</a></li>
                             {% endif %}
                         </ul>
                     </div>

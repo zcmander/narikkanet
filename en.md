@@ -6,6 +6,9 @@ lang: en
 title: NARIKKA - Modernize your restaurant
 description: Serve your customers directly from the phone.
 
+og_image: /img/logo2.PNG
+og_url: https://narikka.net/en
+
 call_to_action_title: Contact now!
 
 nav_home: Home

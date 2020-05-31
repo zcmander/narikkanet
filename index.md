@@ -6,6 +6,9 @@ lang: fi
 title: NARIKKA - Nykyaikaista ravintolasi
 description: Palvele ravintolasi asiakkaitasi suoraan puhemista.
 
+og_image: /img/logo2.PNG
+og_url: https://narikka.net
+
 call_to_action_title: Ota yhteyttä
 
 nav_home: Koti
