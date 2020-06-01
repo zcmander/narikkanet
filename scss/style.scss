@@ -1,3 +1,16 @@
+---
+---
+
+@import "bootstrap";
+@import "font-awesome.min";
+
+@import "../vendors/linericon/style";
+@import "../vendors/owl-carousel/owl.carousel.min";
+@import "../vendors/lightbox/simpleLightbox";
+@import "../vendors/nice-select/css/nice-select";
+@import "../vendors/animate-css/animate";
+@import "../vendors/popup/magnific-popup";
+
 /*----------------------------------------------------
 @File: Default Styles
 @Author: Rocky Ahmed
@@ -4254,5 +4267,4 @@ h6 {
 
 /*---------------------------------------------------- */
 
-
-/*# sourceMappingURL=style.css.map */
+@import "responsive"
